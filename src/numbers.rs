@@ -1,6 +1,7 @@
 use random_string::generate;
-use std::{thread, time,io};
+use std::{thread, time};
 use terminal::{Clear, Action};
+use text_io::read;
 
 
 pub fn memory_numbers(length: usize,sleep_per_digit: usize) {
@@ -25,13 +26,7 @@ pub fn memory_numbers(length: usize,sleep_per_digit: usize) {
      println!("okay print what you memorised");
 
 
-    let mut guess = String::new();
-    io::stdin()
-        .read_line(&mut guess)
-        .expect("Unable to read from stdin");
-
-    let guess_trim = guess.trim();
-
+    let guess_trim: String = read!("{}\n");
 
 
      if guess_trim == numbers_to_mem {

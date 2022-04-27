@@ -1,7 +1,7 @@
-use std::{thread, time,io};
+use std::{thread, time};
 use terminal::{Clear, Action};
-extern crate reqwest;
 extern crate fakedata_generator;
+use text_io::read;
 use fakedata_generator::*;
 
 fn get_random_word() -> String{
@@ -37,13 +37,7 @@ pub fn memory_words(length: usize,sleep_per_word: usize) {
      println!("okay print what you memorised");
 
 
-    let mut guess = String::new();
-    io::stdin()
-        .read_line(&mut guess)
-        .expect("Unable to read from stdin");
-
-    println!("test");
-    let guess_trim = guess.trim();
+     let guess_trim: String = read!("{}\n");
 
 
 

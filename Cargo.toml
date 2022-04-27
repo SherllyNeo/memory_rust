@@ -8,7 +8,5 @@ edition = "2021"
 [dependencies]
 random-string = "1.0"
 terminal = "0.2.1"
-reqwest = { version = "0.11", features = ["json","blocking"] }
-tokio = { version = "1", features = ["full"]}
-regex = "1"
 fakedata_generator = "0.1.0"
+text_io = "0.1.10"
