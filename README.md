@@ -5,6 +5,11 @@ by Sherlly & Light
 
 This program has several features:
 
+## General Form
+./memory_rust -game amount_of_data seconds_per_data
+eg
+./memory rust -cards 52 3 will show 52 cards for 156 (52*3) seconds and then ask you to recite it from memory after clearing the screenh
+
 ## number memory quiz
 ./memory_rust -numbers
 
