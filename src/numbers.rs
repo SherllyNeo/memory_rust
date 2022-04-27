@@ -1,19 +1,15 @@
 use random_string::generate;
 use std::{thread, time};
 use terminal::{Clear, Action};
-use text_io::read;
+use super::input_wrapper;
 
-
-pub fn memory_numbers(length: usize,sleep_per_digit: usize) {
+pub fn memory_numbers(length: usize, time: usize){
 
 
     let terminal = terminal::stdout();
-
-
-
-    let charset = "1234567890";
+    let charset = "1234567890"; //character set used for random generation
     let numbers_to_mem = generate(length, charset);
-    let sleep_time = sleep_per_digit*length;
+    let sleep_time = time*length;
     let sleep_time_u64: u64 = sleep_time as u64;
 
 
@@ -26,7 +22,7 @@ pub fn memory_numbers(length: usize,sleep_per_digit: usize) {
      println!("okay print what you memorised");
 
 
-    let guess_trim: String = read!("{}\n");
+    let guess_trim: String = input_wrapper::get_input();
 
 
      if guess_trim == numbers_to_mem {
