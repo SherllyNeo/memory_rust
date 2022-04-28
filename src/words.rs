@@ -44,7 +44,7 @@ pub fn memory_words(length: usize,sleep_per_word: usize) {
     thread::sleep(time::Duration::from_secs(sleep_time_u64));
 
 
-     terminal.act(Action::ClearTerminal(Clear::All));
+     terminal.act(Action::ClearTerminal(Clear::All)).map_err(|err| println!("{:?}", err)).ok();
 
      println!("okay print what you memorised");
 

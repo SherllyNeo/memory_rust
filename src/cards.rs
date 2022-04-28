@@ -61,7 +61,7 @@ pub fn memory_cards(length: usize, time: usize){
 
     thread::sleep(mem_dur);
 
-    terminal.act(Action::ClearTerminal(Clear::All));
+    terminal.act(Action::ClearTerminal(Clear::All)).map_err(|err| println!("{:?}", err)).ok();
 
 
 
