@@ -9,6 +9,5 @@ edition = "2021"
 random-string = "1.0"
 terminal = "0.2.1"
 fakedata_generator = "0.1.0"
-text_io = "0.1.10"
 rand = "0.8.5"
 reqwest = { version = "0.11.10", features = ["blocking"] }

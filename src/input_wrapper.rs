@@ -2,8 +2,7 @@ use std::io::{stdin,stdout,Write};
 
 pub fn get_input() -> String {
 
-    let mut input =String::new();
-
+    let mut input = String::new();
 
     // flush terminal buffer
     let _=stdout().flush();
@@ -19,5 +18,4 @@ pub fn get_input() -> String {
     }
 
     return input;
-
 }

@@ -35,13 +35,16 @@ pub fn memory_facts(length: usize, time: usize) {
 
 
 
+    let facts_text_block = facts_line;
+
+
 
     // wait for {time} seconds
 
     let mem_time_u64 = (length*time).try_into().unwrap();
     let mem_dur = std::time::Duration::from_secs(mem_time_u64);
 
-    println!("Memorise this:\n{}\nYou have {} seconds.", facts_line, length*time);
+    println!("Memorise this:\n{}\nYou have {} seconds.", facts_text_block, length*time);
 
     thread::sleep(mem_dur);
 
