@@ -25,3 +25,7 @@ eg
 
 ## objects memory quiz
 ./memory_rust -objects
+
+## facts memory
+./memory_rust -facts
+NOTE - not a game. This will show the same amount of facts and for the specified time like the other quizes however it does not accept input after clearing the terminal
