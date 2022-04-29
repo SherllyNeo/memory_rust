@@ -1,6 +1,5 @@
 use super::api_call;
 use std::{thread};
-use super::input_wrapper;
 use terminal::{Clear, Action};
 
 pub fn memory_facts(length: usize, time: usize) {
@@ -49,8 +48,3 @@ pub fn memory_facts(length: usize, time: usize) {
     terminal.act(Action::ClearTerminal(Clear::All)).map_err(|err| println!("{:?}", err)).ok();
 
     }
-
-    println!("end");
-
-
-}
