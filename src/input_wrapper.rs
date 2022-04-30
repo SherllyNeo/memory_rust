@@ -9,13 +9,13 @@ pub fn get_input() -> String {
     // read terminal input into the input variable
     stdin().read_line(&mut input).expect("Did not enter a correct string");
     //remove \n if on linux
-    // if let Some('\n')=input.chars().next_back() {
-    //     input.pop();
-    // }
-    // //remove \r if on windows
-    // if let Some('\r')=input.chars().next_back() {
-    //     input.pop();
-    // }
+    if let Some('\n')=input.chars().next_back() {
+        input.pop();
+    }
+    //remove \r if on windows
+    if let Some('\r')=input.chars().next_back() {
+        input.pop();
+    }
 
     return input;
 }
