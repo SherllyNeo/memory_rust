@@ -4,6 +4,7 @@ mod cards;
 mod input_wrapper;
 mod facts;
 mod api_call;
+mod names;
 use std::env;
 
 
@@ -44,6 +45,17 @@ fn main() {
     let amount_of_seconds_per_facts = args[3].parse::<usize>().unwrap();
     facts::memory_facts(amount_of_facts,amount_of_seconds_per_facts);
     }
+     else if mode == "-names" {
+        let amount_of_names = args[2].parse::<usize>().unwrap();
+        let amount_of_seconds_per_names = args[3].parse::<usize>().unwrap();
+        names::memory_names(amount_of_names,amount_of_seconds_per_names);
+    }
+    else if mode == "-objects" {
+       let amount_of_objects = args[2].parse::<usize>().unwrap();
+       let amount_of_seconds_per_objects = args[3].parse::<usize>().unwrap();
+       names::memory_names(amount_of_objects,amount_of_seconds_per_objects);
+    }
+
     else {
         println!("please use the format -game amount time with the games list being numbers, words, cards.");
     }
