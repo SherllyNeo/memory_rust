@@ -5,6 +5,7 @@ mod input_wrapper;
 mod facts;
 mod api_call;
 mod names;
+mod objects;
 use std::env;
 
 
@@ -53,7 +54,7 @@ fn main() {
     else if mode == "-objects" {
        let amount_of_objects = args[2].parse::<usize>().unwrap();
        let amount_of_seconds_per_objects = args[3].parse::<usize>().unwrap();
-       names::memory_names(amount_of_objects,amount_of_seconds_per_objects);
+       objects::memory_objects(amount_of_objects,amount_of_seconds_per_objects);
     }
 
     else {
