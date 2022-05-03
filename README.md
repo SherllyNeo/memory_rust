@@ -29,7 +29,3 @@ eg
 ## facts memory
 ./memory_rust -facts
 NOTE - not a game. This will show the same amount of facts and for the specified time like the other quizes however it does not accept input after clearing the terminal
-
-## day_of_any_date
-./memory_rust -doad
-NOTE - this gave will show a series of dates and you will return the day of the week where 0 is monday
