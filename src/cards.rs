@@ -1,14 +1,12 @@
 use rand::Rng;
 use std::{thread};
 use super::input_wrapper;
-use terminal::{Clear, Action};
 
 
 
 pub fn memory_cards(length: usize, time: usize){
 
 
-    let terminal = terminal::stdout();
     let ranks = vec!["A","K","Q","J","2","3","4","5","6","7","8","9","10"];
     let suits = vec!["c","d","h","s"];
     //let suits = vec!["♣","♦","♥","♠"];
@@ -61,8 +59,10 @@ pub fn memory_cards(length: usize, time: usize){
 
     thread::sleep(mem_dur);
 
-    terminal.act(Action::ClearTerminal(Clear::All)).map_err(|err| println!("{:?}", err)).ok();
 
+    for _ in 1..50 {
+        println!("\n");
+    }
 
 
     // user prompt

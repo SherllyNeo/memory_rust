@@ -1,5 +1,4 @@
 use std::{thread, time};
-use terminal::{Clear, Action};
 extern crate fakedata_generator;
 use fakedata_generator::*;
 use super::input_wrapper;
@@ -24,7 +23,6 @@ fn get_random_word() -> String{
 
 pub fn memory_words(length: usize,sleep_per_word: usize) {
 
-    let terminal = terminal::stdout();
     let mut word_set: Vec<String> = Vec::with_capacity(length);
     let sleep_time = sleep_per_word*length;
     let sleep_time_u64: u64 = sleep_time as u64;
@@ -44,7 +42,7 @@ pub fn memory_words(length: usize,sleep_per_word: usize) {
     thread::sleep(time::Duration::from_secs(sleep_time_u64));
 
 
-     terminal.act(Action::ClearTerminal(Clear::All)).map_err(|err| println!("{:?}", err)).ok();
+    println!("\n");
 
      println!("okay print what you memorised");
 

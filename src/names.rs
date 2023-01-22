@@ -1,7 +1,6 @@
 use super::api_call;
 use super::input_wrapper;
 use std::{thread};
-use terminal::{Clear, Action};
 //use regex //1.4.5
 
 // function for getting a random name
@@ -25,7 +24,6 @@ fn random_name() -> String{
 }
 
 pub fn memory_names(length: usize, time: usize){
-    let terminal = terminal::stdout();
     let mut random_names_vec: Vec<String> = vec![];
 
     // loop to get {number_of_names} random names
@@ -43,8 +41,10 @@ pub fn memory_names(length: usize, time: usize){
 
     thread::sleep(mem_dur);
 
-    terminal.act(Action::ClearTerminal(Clear::All)).map_err(|err| println!("{:?}", err)).ok();
 
+    for _ in 1..50 {
+        println!("\n");
+    }
 
 
     // user prompt

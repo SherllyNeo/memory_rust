@@ -1,10 +1,8 @@
 use super::api_call;
 use std::{thread};
-use terminal::{Clear, Action};
 
 pub fn memory_facts(length: usize, time: usize) {
 
-    let terminal = terminal::stdout();
 
     // sexy anonymous function
     let random_fact = || {
@@ -48,6 +46,8 @@ pub fn memory_facts(length: usize, time: usize) {
 
     thread::sleep(mem_dur);
 
-    terminal.act(Action::ClearTerminal(Clear::All)).map_err(|err| println!("{:?}", err)).ok();
+    for _ in 1..50 {
+        println!("\n");
+    }
 
     }
